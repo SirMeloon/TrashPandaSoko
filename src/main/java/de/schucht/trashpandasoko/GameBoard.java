@@ -38,6 +38,7 @@ public class GameBoard {
 			}
 			System.out.print("\n");
 		}
+
 	}
 	
 	public void drawGoal() {
@@ -60,7 +61,7 @@ public class GameBoard {
 			for (int j = 0; j < temp[i].length; j++) {
 				if (i == 0 || i == temp.length - 1) {
 					temp[i][j] = '#';
-				} else if (j == 0 || j == temp[i].length-1) {
+				} else if (j == 0 || j == temp[i].length - 1) {
 					temp[i][j] = '#';
 				} else {
 					temp[i][j] = ' ';
@@ -69,25 +70,26 @@ public class GameBoard {
 		}
 		return temp;
 	}
+
+	public void createObstacles(int x, int y) {
+		if (isObstacle(x, y) == false) {
+			for (int i = 0; i < board.length; i++) {
+				for (int j = 0; j < board[i].length; j++) {
+					if (i == y && j == x) {
+						board[y][x] = '#';
+					}
+				}
+			}
+		} else {
+			System.out.println("Obstacle spawned out of bounds");
+		}
+	}
 	
 	public boolean isObstacle(int x, int y) {
 		for (int i = 0; i < board.length; i++) {
 			for (int j = 0; j < board[i].length; j++) {
 				if(i == y && j == x) {
 					if(board[i][j] == '#') {
-						return true;
-					}
-				}
-			}
-		}
-		return false;
-	}
-	
-	public boolean isGoal(int x, int y) {
-		for (int i = 0; i < board.length; i++) {
-			for (int j = 0; j < board[i].length; j++) {
-				if(i == y && j == x) {
-					if(board[i][j] == 'D') {
 						return true;
 					}
 				}

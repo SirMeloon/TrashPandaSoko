@@ -43,7 +43,7 @@ public class Player implements Object {
 		if (b.isObstacle(x, y - 1) == false) {
 			if (box.isBox(x, y - 1) == true) {
 				if (b.isObstacle(x, y - 2) == true) {
-					System.out.println("Can't go down!");
+					System.out.println("Can't go up!");
 				} else {
 					box.moveUp();
 					clear(x, y);
@@ -56,7 +56,7 @@ public class Player implements Object {
 				draw(x, y);
 			}
 		} else {
-			System.out.println("Can't go down!");
+			System.out.println("Can't go up!");
 		}
 	}
 
@@ -65,7 +65,7 @@ public class Player implements Object {
 		if (b.isObstacle(x - 1, y) == false) {
 			if (box.isBox(x - 1, y) == true) {
 				if (b.isObstacle(x - 2, y) == true) {
-					System.out.println("Can't go down!");
+					System.out.println("Can't go left!");
 				} else {
 					box.moveLeft();
 					clear(x, y);
@@ -78,7 +78,7 @@ public class Player implements Object {
 				draw(x, y);
 			}
 		} else {
-			System.out.println("Can't go down!");
+			System.out.println("Can't go left!");
 		}
 
 	}
@@ -87,7 +87,7 @@ public class Player implements Object {
 		if (b.isObstacle(x + 1, y) == false) {
 			if (box.isBox(x + 1, y) == true) {
 				if (b.isObstacle(x + 2, y) == true) {
-					System.out.println("Can't go down!");
+					System.out.println("Can't go right!");
 				} else {
 					box.moveRight();
 					clear(x, y);
@@ -100,7 +100,7 @@ public class Player implements Object {
 				draw(x, y);
 			}
 		} else {
-			System.out.println("Can't go down!");
+			System.out.println("Can't go right!");
 		}
 	}
 

@@ -25,7 +25,7 @@ public class App {
 
 			while (win == false) {
 
-				System.out.println("Move: up, down, left, right");
+				System.out.println("Move: (u)p, (d)own, (l)eft, (r)ight");
 				controls(sc.next());
 				draw();
 				win();
@@ -52,6 +52,8 @@ public class App {
 		p = new Player(px, py, b, box);
 		p.draw(px, py);
 
+		b.createObstacles(4,1);
+		b.createObstacles(4,3);
 		b.drawBoard();
 
 	}
@@ -79,7 +81,7 @@ public class App {
 	public static void win() {
 		if(box.getX() == b.getGx() && box.getY() == b.getGy()) {
 			win = true;
-			System.out.println("You have won!!");
+			System.out.println("The racoon got his food!!");
 		} 
 	}
 
