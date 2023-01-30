@@ -23,7 +23,7 @@ public class Box implements Object {
 			for (int i = 0; i < b.board.length; i++) {
 				for (int j = 0; j < b.board[i].length; j++) {
 					if (i == y && j == x) {
-						b.board[y][x] = '0';
+						b.board[y][x] = 'o';
 					}
 				}
 			}
@@ -40,7 +40,7 @@ public class Box implements Object {
 		for (int i = 0; i < b.board.length; i++) {
 			for (int j = 0; j < b.board[i].length; j++) {
 				if (i == y && j == x) {
-					if (b.board[i][j] == '0') {
+					if (b.board[i][j] == 'o') {
 						return true;
 					}
 				}

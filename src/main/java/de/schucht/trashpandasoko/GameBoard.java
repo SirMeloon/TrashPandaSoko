@@ -9,6 +9,10 @@ public class GameBoard {
 	private int gx;
 	private int gy;
 
+	private int level = 1;
+
+
+
 	public char[][] board;
 
 	/**
@@ -41,7 +45,7 @@ public class GameBoard {
 			for (int i = 0; i < board.length; i++) {
 				for (int j = 0; j <board[i].length; j++) {
 					if (i == gy && j == gx) {
-						board[gy][gx] = 'O';
+						board[gy][gx] = 'D';
 					}
 				}
 			}
@@ -83,13 +87,21 @@ public class GameBoard {
 		for (int i = 0; i < board.length; i++) {
 			for (int j = 0; j < board[i].length; j++) {
 				if(i == y && j == x) {
-					if(board[i][j] == 'O') {
+					if(board[i][j] == 'D') {
 						return true;
 					}
 				}
 			}
 		}
 		return false;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
 	}
 
 	public int getHeight() {
